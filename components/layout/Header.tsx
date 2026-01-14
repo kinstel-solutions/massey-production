@@ -56,10 +56,9 @@ export function Header() {
               "hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide transition-colors duration-300",
                isScrolled ? "text-primary" : "text-white"
             )}>
-              <Link href="/shop" className="hover:opacity-70 transition-opacity">SHOP</Link>
-              <Link href="/shop" className="hover:opacity-70 transition-opacity">COLLECTIONS</Link>
-              <Link href="/story" className="hover:opacity-70 transition-opacity">STORY</Link>
-              <Link href="/contact" className="hover:opacity-70 transition-opacity">CONTACT</Link>
+              <Link href="#portfolio" className="hover:opacity-70 transition-opacity">PORTFOLIO</Link>
+              <Link href="#services" className="hover:opacity-70 transition-opacity">SERVICES</Link>
+              <Link href="#contact" className="hover:opacity-70 transition-opacity">CONTACT</Link>
             </nav>
           </div>
 
@@ -69,25 +68,17 @@ export function Header() {
               "font-serif font-bold tracking-tighter uppercase transition-all duration-300",
               isScrolled || isMobileMenuOpen ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"
             )}>
-              Farzana Fehmi
+              Massey Production
             </h1>
           </Link>
 
-          {/* Icons */}
+          {/* Icons - Simplified for Portfolio */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className={cn("transition-colors", !isScrolled && !isMobileMenuOpen && "hover:bg-white/10 hover:text-white")}>
-              <Search className="w-5 h-5" />
-              <span className="sr-only">Search</span>
-            </Button>
-            <Button variant="ghost" size="icon" className={cn("hidden md:inline-flex transition-colors", !isScrolled && !isMobileMenuOpen && "hover:bg-white/10 hover:text-white")}>
-              <User className="w-5 h-5" />
-              <span className="sr-only">Account</span>
-            </Button>
-            <Button variant="ghost" size="icon" className={cn("transition-colors relative", !isScrolled && !isMobileMenuOpen && "hover:bg-white/10 hover:text-white")}>
-              <ShoppingBag className="w-5 h-5" />
-              <div className={cn("absolute top-2 right-2 w-2 h-2 rounded-full", isScrolled || isMobileMenuOpen ? "bg-black" : "bg-white")}></div>
-              <span className="sr-only">Cart</span>
-            </Button>
+             <Link href="#contact">
+              <Button variant="ghost" className={cn("hidden md:inline-flex transition-colors font-medium tracking-widest", !isScrolled && !isMobileMenuOpen && "hover:bg-white/10 hover:text-white")}>
+                BOOK NOW
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -104,40 +95,26 @@ export function Header() {
           >
             <nav className="flex flex-col items-center space-y-8 mt-12">
               <Link 
-                href="/shop" 
+                href="#portfolio" 
                 className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                SHOP
+                PORTFOLIO
               </Link>
               <Link 
-                href="/shop" 
+                href="#services" 
                 className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                COLLECTIONS
+                SERVICES
               </Link>
               <Link 
-                href="/story" 
-                className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                STORY
-              </Link>
-              <Link 
-                href="/contact" 
+                href="#contact" 
                 className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 CONTACT
               </Link>
-              
-              <div className="w-12 h-[1px] bg-gray-200 my-8" />
-              
-              <div className="flex gap-8 text-gray-500">
-                 <Link href="/account" className="text-sm uppercase tracking-widest" onClick={() => setIsMobileMenuOpen(false)}>Account</Link>
-                 <Link href="/search" className="text-sm uppercase tracking-widest" onClick={() => setIsMobileMenuOpen(false)}>Search</Link>
-              </div>
             </nav>
           </motion.div>
         )}

@@ -27,8 +27,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-sm md:text-base font-medium tracking-[0.2em] uppercase mb-4">
-            Spring / Summer 2026
+          <h2 className="text-sm md:text-base font-medium tracking-[0.2em] uppercase mb-4 text-gray-200">
+            LUCKNOW'S PREMIER STUDIO | Wedding & Events
           </h2>
         </motion.div>
 
@@ -37,8 +37,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight mb-8">
-            ETHEREAL ELEGANCE
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
+            BEST PHOTOGRAPHER IN LUCKNOW
           </h1>
         </motion.div>
 
@@ -48,10 +48,10 @@ export function Hero() {
            transition={{ duration: 0.8, delay: 0.8 }}
         >
            <Link 
-             href="/shop" 
-             className="inline-block border-b-2 border-white pb-2 text-base md:text-lg font-medium tracking-[0.15em] hover:text-white/80 hover:border-white/80 transition-all uppercase"
+             href="/#services" 
+             className="inline-block border-2 border-white/80 px-8 py-3 text-base md:text-lg font-medium tracking-[0.15em] hover:bg-white hover:text-black transition-all uppercase"
            >
-             Discover The Collection
+             Explore Our Work
            </Link>
         </motion.div>
       </div>

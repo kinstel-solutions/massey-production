@@ -18,8 +18,17 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Farzana Fehmi | Designer Garments',
-  description: 'Discover the latest collection of designer garments by Farzana Fehmi.',
+  title: 'Massey Production | Best Photographer in Lucknow | Wedding & Commercial Studio',
+  description: 'Massey Production is a premier photography studio in Lucknow, specializing in weddings, corporate events, and fashion portfolios. Book the best photographer in Lucknow for your special moments.',
+  keywords: ['Photographer in Lucknow', 'Wedding Photographer Lucknow', 'Best Photographer Lucknow', 'Fashion Photography Lucknow', 'Commercial Photographer Lucknow', 'Massey Production'],
+  openGraph: {
+    title: 'Massey Production | Best Photographer in Lucknow',
+    description: 'Premier photography services in Lucknow for weddings, events, and commercial shoots.',
+    url: 'https://masseyproduction.com',
+    siteName: 'Massey Production',
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
