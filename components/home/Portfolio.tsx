@@ -10,21 +10,21 @@ const categories = [
     title: 'Wedding & Events',
     description: 'Capturing the magic of your special day.',
     image: '/portfolio-wedding.png',
-    link: '#services',
+    link: '/services/wedding-events',
   },
   {
     id: 'commercial',
     title: 'Commercial & Corporate',
     description: 'Elevating your brand with professional imagery.',
     image: '/portfolio-commercial.png',
-    link: '#services',
+    link: '/services/commercial-corporate',
   },
   {
     id: 'fashion',
     title: 'Fashion & Portfolios',
     description: 'Showcasing style, beauty, and personality.',
     image: '/portfolio-fashion.png',
-    link: '#services',
+    link: '/services/fashion-portfolios',
   }
 ];
 
@@ -60,29 +60,29 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="group cursor-pointer"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-              </div>
-              
-              <div className="text-center space-y-2">
-                <h3 className="text-2xl font-serif">{category.title}</h3>
-                <p className="text-muted-foreground text-sm">{category.description}</p>
-                <Link 
-                  href={category.link}
-                  className="inline-block mt-4 text-xs font-medium tracking-widest uppercase border-b border-black pb-1 hover:text-black/70 hover:border-black/70 transition-all"
-                >
-                  View Services
-                </Link>
-              </div>
+              <Link href={category.link} className="block group cursor-pointer">
+                <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                </div>
+                
+                <div className="text-center space-y-2">
+                  <h3 className="text-2xl font-serif">{category.title}</h3>
+                  <p className="text-muted-foreground text-sm">{category.description}</p>
+                  <span 
+                    className="inline-block mt-4 text-xs font-medium tracking-widest uppercase border-b border-black pb-1 group-hover:text-black/70 group-hover:border-black/70 transition-all"
+                  >
+                    View Services
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
