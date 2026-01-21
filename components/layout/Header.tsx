@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Search, ShoppingBag, Menu, User, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -27,6 +27,12 @@ export function Header() {
       document.body.style.overflow = 'unset';
     }
   }, [isMobileMenuOpen]);
+
+  const navLinks = [
+    { href: '#portfolio', label: 'PORTFOLIO' },
+    { href: '#services', label: 'SERVICES' },
+    { href: '#contact', label: 'CONTACT' },
+  ];
 
   return (
     <>
@@ -53,29 +59,31 @@ export function Header() {
             
             {/* Desktop Nav */}
             <nav className={cn(
-              "hidden lg:flex items-center gap-8 text-xs font-medium tracking-wide transition-colors duration-300",
+              "hidden lg:flex items-center gap-6 text-xs font-medium tracking-wide transition-colors duration-300",
                isScrolled ? "text-primary" : "text-white"
             )}>
-              <Link href="#portfolio" className="hover:opacity-70 transition-opacity">PORTFOLIO</Link>
-              <Link href="#services" className="hover:opacity-70 transition-opacity">SERVICES</Link>
-              <Link href="#contact" className="hover:opacity-70 transition-opacity">CONTACT</Link>
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:opacity-70 transition-opacity">
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* Logo */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 group" onClick={() => setIsMobileMenuOpen(false)}>
             <h1 className={cn(
-              "font-serif font-bold tracking-tighter uppercase transition-all duration-300",
-              isScrolled || isMobileMenuOpen ? "text-xl md:text-2xl" : "text-2xl md:text-3xl"
+              "font-serif font-bold tracking-tight uppercase transition-all duration-300 whitespace-nowrap",
+              isScrolled || isMobileMenuOpen ? "text-base md:text-lg" : "text-lg md:text-xl"
             )}>
               Massey Production
             </h1>
           </Link>
 
-          {/* Icons - Simplified for Portfolio */}
+          {/* CTA Button */}
           <div className="flex items-center gap-2">
              <Link href="#contact">
-              <Button variant="ghost" className={cn("hidden md:inline-flex transition-colors font-medium tracking-widest", !isScrolled && !isMobileMenuOpen && "hover:bg-white/10 hover:text-white")}>
+              <Button variant="ghost" size="sm" className={cn("hidden md:inline-flex transition-colors text-xs font-medium tracking-widest", !isScrolled && !isMobileMenuOpen && "hover:bg-white/10 hover:text-white")}>
                 BOOK NOW
               </Button>
             </Link>
@@ -94,26 +102,22 @@ export function Header() {
             className="fixed inset-0 z-40 bg-white pt-24 px-4 overflow-y-auto"
           >
             <nav className="flex flex-col items-center space-y-8 mt-12">
-              <Link 
-                href="#portfolio" 
-                className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                PORTFOLIO
-              </Link>
-              <Link 
-                href="#services" 
-                className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                SERVICES
-              </Link>
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.href}
+                  href={link.href} 
+                  className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link 
                 href="#contact" 
-                className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
+                className="mt-8 bg-black text-white px-8 py-3 text-sm font-bold tracking-[0.15em] uppercase"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                CONTACT
+                Book Your Session
               </Link>
             </nav>
           </motion.div>
@@ -122,3 +126,4 @@ export function Header() {
     </>
   );
 }
+

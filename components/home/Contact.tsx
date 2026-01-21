@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Facebook, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Contact() {
@@ -17,7 +17,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="font-serif text-4xl md:text-6xl font-bold leading-tight">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold leading-tight">
               Let's Create Something Beautiful
             </h2>
             <p className="text-gray-400 text-lg font-light leading-relaxed">
@@ -51,7 +51,30 @@ export function Contact() {
                 </div>
                 <div>
                    <p className="text-xs uppercase tracking-widest text-gray-500">Visit Us</p>
-                   <p className="text-lg">Lucknow, India</p>
+                   <p className="text-lg">Hazratganj, Lucknow</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                   <Clock className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                   <p className="text-xs uppercase tracking-widest text-gray-500">Business Hours</p>
+                   <p className="text-lg">Mon-Sat: 10 AM - 8 PM</p>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="pt-6 border-t border-white/10">
+                <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Follow Us</p>
+                <div className="flex gap-4">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <Instagram className="w-5 h-5 text-white" />
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <Facebook className="w-5 h-5 text-white" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -97,9 +120,14 @@ export function Contact() {
                  <textarea id="message" rows={4} className="w-full border-b border-gray-300 focus:border-black outline-none py-2 transition-colors resize-none" placeholder="Tell us about your requirements..."></textarea>
               </div>
 
-              <Button type="submit" className="w-full bg-black text-white hover:bg-black/80 h-12 uppercase tracking-widest text-xs font-bold">
-                 Send Message <Send className="w-4 h-4 ml-2" />
-              </Button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Button type="submit" className="w-full bg-black text-white hover:bg-black/80 h-12 uppercase tracking-widest text-xs font-bold">
+                   Send Message <Send className="w-4 h-4 ml-2" />
+                </Button>
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-full bg-green-600 text-white hover:bg-green-700 h-12 uppercase tracking-widest text-xs font-bold flex items-center justify-center rounded-md transition-colors">
+                   WhatsApp Us
+                </a>
+              </div>
             </form>
           </motion.div>
         </div>

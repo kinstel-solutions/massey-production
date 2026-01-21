@@ -16,13 +16,21 @@ export function Services() {
     <section id="services" className="py-20 md:py-32 bg-stone-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-20 space-y-4">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs uppercase tracking-[0.3em] text-gray-500 font-medium"
+          >
+            What We Offer
+          </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-serif text-3xl md:text-5xl font-bold"
+            className="font-serif text-2xl md:text-3xl font-bold"
           >
-            Our Services
+            Photography & Cinematography Services
           </motion.h2>
           <motion.div 
             initial={{ width: 0 }}
@@ -37,7 +45,8 @@ export function Services() {
              transition={{ delay: 0.1 }}
              className="text-muted-foreground max-w-2xl mx-auto pt-4"
           >
-            We offer a comprehensive range of photography and cinematography services tailored to your unique needs in Lucknow and beyond.
+            From intimate portraits to grand events, we offer a comprehensive range of photography and videography 
+            services tailored to bring your vision to life.
           </motion.p>
         </div>
 
@@ -59,7 +68,7 @@ export function Services() {
                   {iconMap[category.iconName]}
                 </div>
                 
-                <h3 className="text-2xl font-serif font-semibold mb-3 group-hover:text-gray-700 transition-colors">{category.title}</h3>
+                <h3 className="text-xl font-serif font-semibold mb-3 group-hover:text-gray-700 transition-colors">{category.title}</h3>
                 <p className="text-muted-foreground text-sm mb-8">{category.description}</p>
                 
                 <ul className="space-y-3 mt-auto">

@@ -8,21 +8,21 @@ const categories = [
   {
     id: 'wedding',
     title: 'Wedding & Events',
-    description: 'Capturing the magic of your special day.',
+    description: 'From sacred rituals to joyful celebrations, we capture every emotion that makes your special day unforgettable.',
     image: '/portfolio-wedding.png',
     link: '/services/wedding-events',
   },
   {
     id: 'commercial',
     title: 'Commercial & Corporate',
-    description: 'Elevating your brand with professional imagery.',
+    description: 'Professional imagery that elevates your brand, tells your story, and connects with your audience.',
     image: '/portfolio-commercial.png',
     link: '/services/commercial-corporate',
   },
   {
     id: 'fashion',
     title: 'Fashion & Portfolios',
-    description: 'Showcasing style, beauty, and personality.',
+    description: 'High-fashion editorials and portfolio shoots designed to launch careers and showcase talent.',
     image: '/portfolio-fashion.png',
     link: '/services/fashion-portfolios',
   }
@@ -33,22 +33,30 @@ export function Portfolio() {
     <section className="py-20 md:py-32 bg-white" id="portfolio">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16 space-y-4">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs uppercase tracking-[0.3em] text-gray-500 font-medium"
+          >
+            Our Work
+          </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-serif text-3xl md:text-5xl font-bold"
+            className="font-serif text-2xl md:text-3xl font-bold"
           >
-            Our Portfolio
+            Stories We've Told
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-muted-foreground uppercase tracking-widest text-xs md:text-sm"
+            className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Curated works of art
+            Explore our curated collection of work across weddings, commercial projects, and fashion photography.
           </motion.p>
         </div>
 
@@ -74,7 +82,7 @@ export function Portfolio() {
                 </div>
                 
                 <div className="text-center space-y-2">
-                  <h3 className="text-2xl font-serif">{category.title}</h3>
+                  <h3 className="text-xl font-serif">{category.title}</h3>
                   <p className="text-muted-foreground text-sm">{category.description}</p>
                   <span 
                     className="inline-block mt-4 text-xs font-medium tracking-widest uppercase border-b border-black pb-1 group-hover:text-black/70 group-hover:border-black/70 transition-all"
