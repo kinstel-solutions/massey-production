@@ -27,8 +27,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-sm md:text-base font-medium tracking-[0.2em] uppercase mb-4 text-gray-200">
-            LUCKNOW'S PREMIER STUDIO | Wedding & Events
+          <h2 className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase mb-4 text-gray-200">
+            PROFESSIONAL PHOTOGRAPHY STUDIO | Weddings & Events
           </h2>
         </motion.div>
 
@@ -37,8 +37,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
-            BEST PHOTOGRAPHER IN LUCKNOW
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
+            Capturing Timeless Moments
           </h1>
         </motion.div>
 

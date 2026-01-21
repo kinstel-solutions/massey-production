@@ -53,7 +53,7 @@ export function Header() {
             
             {/* Desktop Nav */}
             <nav className={cn(
-              "hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide transition-colors duration-300",
+              "hidden lg:flex items-center gap-8 text-xs font-medium tracking-wide transition-colors duration-300",
                isScrolled ? "text-primary" : "text-white"
             )}>
               <Link href="#portfolio" className="hover:opacity-70 transition-opacity">PORTFOLIO</Link>
@@ -66,7 +66,7 @@ export function Header() {
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 group" onClick={() => setIsMobileMenuOpen(false)}>
             <h1 className={cn(
               "font-serif font-bold tracking-tighter uppercase transition-all duration-300",
-              isScrolled || isMobileMenuOpen ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"
+              isScrolled || isMobileMenuOpen ? "text-xl md:text-2xl" : "text-2xl md:text-3xl"
             )}>
               Massey Production
             </h1>
@@ -96,21 +96,21 @@ export function Header() {
             <nav className="flex flex-col items-center space-y-8 mt-12">
               <Link 
                 href="#portfolio" 
-                className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
+                className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 PORTFOLIO
               </Link>
               <Link 
                 href="#services" 
-                className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
+                className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 SERVICES
               </Link>
               <Link 
                 href="#contact" 
-                className="text-2xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
+                className="text-xl font-serif font-medium tracking-wide hover:opacity-70 transition-opacity"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 CONTACT
